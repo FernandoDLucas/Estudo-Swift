@@ -47,6 +47,7 @@
 				EC0AF55D2417B072004F7F91 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		EC0AF55D2417B072004F7F91 /* Products */ = {
 			isa = PBXGroup;

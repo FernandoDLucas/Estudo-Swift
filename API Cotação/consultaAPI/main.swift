@@ -25,8 +25,22 @@ func consultaSigla(){
 }
 
 
+func menu(){
+    var input :String? = nil
+    while input == nil{
+    print("\t \t \t \t Menu Principal")
+    print ("Consultar ")
+    print("\t \t \t \t Selecione a opção:")
+    input = readLine()}
+    }
+    
 
-consultaSigla()
+enum optMenu{
+    case ConsultarSigla
+    case ConsultarCotacao
+}
+
+menu()
 
 
 
