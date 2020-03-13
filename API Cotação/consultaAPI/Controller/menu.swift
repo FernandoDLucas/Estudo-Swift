@@ -14,7 +14,8 @@ func menu(){
         print("\n \t \t \t \t Menu Principal")
         print ("1 - Consultar Cotação")
         print ("2 - Consultar Sigla das Moedas")
-        print ("3 - Encerrar Programa")
+        print ("3 - Converter Moeda")
+        print ("9 - Encerrar Programa")
         print("\t \t \t \t Selecione a opção:", terminator: "")
         input = readLine()
         if let entrada = input, validaOpcao(txt: entrada){
@@ -24,6 +25,8 @@ func menu(){
             case "2":
                 consultaSigla()
             case "3":
+                conversorMoeda()
+            case "9":
                 exit(EXIT_SUCCESS)
             default:
                 print("Contact the administrator")
@@ -36,5 +39,5 @@ func menu(){
 }
 
 func validaOpcao(txt: String) -> Bool{
-    return txt == "1" || txt == "2" || txt == "3"
+    return txt == "1" || txt == "2" || txt == "3" || txt == "9"
 }
