@@ -27,26 +27,36 @@ func consultaSigla(){
 
 func menu(){
     var input :String? = nil
-    while input == nil{
+    while input == nil || input == ""{
     print("\t \t \t \t Menu Principal")
-    print ("Consultar ")
+    print ("1 - Consultar Cotação")
+    print ("2 - Consultar Sigla das Moedas")
     print("\t \t \t \t Selecione a opção:")
-    input = readLine()}
+    input = readLine()
+        if let entrada = input, validaOpcao(txt: entrada){
+            switch entrada{
+            case "1":
+                print("Consultando Cotação")
+            case "2":
+                consultaSigla()
+            default:
+                print("Contact the administrator")
+            }
+        } else {
+            print ("Entrada Inválida")
+            input = ""
+        }
     }
-    
+}
 
-enum optMenu{
-    case ConsultarSigla
-    case ConsultarCotacao
+func validaOpcao(txt: String) -> Bool{
+    return txt == "1" || txt == "2"
 }
 
 menu()
 
 
-
-
-var test : CurrencyExchangeRate
-test = CurrencyExchangeRate(moedaOrigemCod: "", moedaOrigemDescricao: "", moedaDestinoCod: "", moedaDestinoDescricao: "", exchangeRate: "", ultimaAtualizacao: "", timeZone: "", bidPrice: "", askPrice: "")
+var test = CurrencyExchangeRate ()
 
 var result : json
 

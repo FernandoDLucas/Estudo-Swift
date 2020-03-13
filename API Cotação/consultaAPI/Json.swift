@@ -41,4 +41,10 @@ public struct CurrencyExchangeRate: Decodable {
         case bidPrice = "8. Bid Price"
         case askPrice = "9. Ask Price"
     }
+    
+    init() {
+        moedaOrigemCod = ""; moedaOrigemDescricao = ""; moedaDestinoCod = ""; moedaDestinoDescricao = ""; exchangeRate = ""; ultimaAtualizacao = ""; timeZone = ""; bidPrice = ""; askPrice = ""
+    }
 }
+
+
