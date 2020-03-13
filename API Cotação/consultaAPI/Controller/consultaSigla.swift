@@ -9,9 +9,11 @@
 import Foundation
 
 func consultaSigla(){
-    let descricoes = ["Dólar", "Real Brasileiro", "Euro"]
-    let moedaCod = ["USD", "BRL", "EUR"]
-    for i in 0...2{
+    print("")
+    let descricoes = ["Dólar", "Real Brasileiro", "Euro", "Bitcoin"]
+    let moedaCod = ["USD", "BRL", "EUR", "BTC"]
+    for i in 0...3{
         print("\(padding(descricoes[i], 20)) \(moedaCod[i])")
     }
+    menu()
 }

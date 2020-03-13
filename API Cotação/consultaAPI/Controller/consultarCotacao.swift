@@ -37,17 +37,10 @@ func consultarCotacao(){
         }
     }
     
-    var link = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency="
-    let apiKey = "&apikey=W7U851QBYFJ4X81C"
-    
-    print("Insira a sigla da moeda destino: ", terminator: "")
-    
-    if let moedaDestino = readLine(){
-        link = link + moedaDestino.uppercased() + apiKey
-    } else {
-        print("Sem Input")
-        consultarCotacao()
-    }
+    let retornoUrl = criarUrl()
+    let link = retornoUrl.0
+    let moedaOrigem = retornoUrl.1
+    let moedaDestino = retornoUrl.2
     
     guard let requisicao = URL(string: link) else {fatalError()}
     
@@ -59,5 +52,7 @@ func consultarCotacao(){
     
     semaphore.wait()
     
-    print("A cotação desta moeda para USD é: \(result.response.exchangeRate)")
+    print("A cotação de \(moedaOrigem!) para \(moedaDestino!) é: \(result.response.exchangeRate)")
+    
+    menuRepetir(f: consultarCotacao)
 }

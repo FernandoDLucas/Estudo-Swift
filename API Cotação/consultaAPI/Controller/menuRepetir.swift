@@ -1,5 +1,5 @@
 //
-//  menu.swift
+//  menuRepetir.swift
 //  nanoSwiftcChallenge
 //
 //  Created by Fernando de Lucas on 13/03/20.
@@ -7,22 +7,21 @@
 //
 
 import Foundation
-
-func menu(){
+func menuRepetir(f : () -> ()){
     var input :String? = nil
     while input == nil || input == ""{
-        print("\n \t \t \t \t Menu Principal")
-        print ("1 - Consultar Cotação")
-        print ("2 - Consultar Sigla das Moedas")
+        print("\n \t \t \t \t Menu")
+        print ("1 - Repetir Operação")
+        print ("2 - Voltar para o Menu Principal")
         print ("3 - Encerrar Programa")
         print("\t \t \t \t Selecione a opção:", terminator: "")
         input = readLine()
         if let entrada = input, validaOpcao(txt: entrada){
             switch entrada{
             case "1":
-                consultarCotacao()
+                f()
             case "2":
-                consultaSigla()
+                menu()
             case "3":
                 exit(EXIT_SUCCESS)
             default:
@@ -33,8 +32,4 @@ func menu(){
             input = ""
         }
     }
-}
-
-func validaOpcao(txt: String) -> Bool{
-    return txt == "1" || txt == "2" || txt == "3"
 }
