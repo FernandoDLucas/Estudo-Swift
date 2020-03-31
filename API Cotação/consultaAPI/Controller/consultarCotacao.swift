@@ -54,5 +54,9 @@ func consultarCotacao(){
     
     print("A cotação de \(moedaOrigem!) para \(moedaDestino!) é: \(result.response.exchangeRate)")
     
+    
     menuRepetir(f: consultarCotacao)
+    
 }
+
+

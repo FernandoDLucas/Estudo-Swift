@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 func menuRepetir(f : () -> ()){
     var input :String? = nil
     while input == nil || input == ""{
@@ -31,8 +32,10 @@ func menuRepetir(f : () -> ()){
             print ("Entrada Inválida")
             input = ""
         }
-    }
-}
+        }}
+    
+    
+    
 
 func validaRepetir(txt: String) -> Bool{
     return txt == "1" || txt == "2" || txt == "3"
